@@ -1,0 +1,97 @@
+
+
+Started GET "/rails/info/properties" for 127.0.0.1 at 2011-01-28 00:35:16 -0430
+
+PGError (FATAL:  la autentificaci?n Ident fall? para el usuario <<sicedat>>
+):
+  
+
+Rendered /home/vincenzo/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/vincenzo/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.7ms)
+Rendered /home/vincenzo/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.9ms)
+
+
+Started GET "/rails/info/properties" for 127.0.0.1 at 2011-01-28 00:35:40 -0430
+
+PGError (FATAL:  la autentificaci?n Ident fall? para el usuario <<sicedat>>
+):
+  
+
+Rendered /home/vincenzo/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/vincenzo/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /home/vincenzo/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.3ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.6ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.8ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.5ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (31.7ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (2.0ms)[0m  SHOW TIME ZONE
+  [1m[36mSQL (8.7ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ 
+[0m
+  [1m[35mSQL (23.3ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW search_path[0m
+  [1m[35mSQL (4.3ms)[0m   SELECT distinct i.relname, d.indisunique, d.indkey, t.oid
+ FROM pg_class t, pg_class i, pg_index d
+ WHERE i.relkind = 'i'
+ AND d.indexrelid = i.oid
+ AND d.indisprimary = 'f'
+ AND t.oid = d.indrelid
+ AND t.relname = 'schema_migrations'
+ AND i.relnamespace IN (SELECT oid FROM pg_namespace WHERE nspname IN ('"$user"','public') )
+ ORDER BY i.relname
+  [1m[36mSQL (24.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (1.3ms)[0m   SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_info'
+ 
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ 
+[0m
+  [1m[35mSQL (1.6ms)[0m   SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (3.0ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (3.9ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (6.7ms)[0m  [1m SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+[0m
+
+
+Started GET "/rails/info/properties" for 127.0.0.1 at 2011-01-28 00:43:04 -0430
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW client_min_messages[0m
+  [1m[35mSQL (0.5ms)[0m  SET client_min_messages TO 'panic'
+  [1m[36mSQL (0.6ms)[0m  [1mSET standard_conforming_strings = on[0m
+  [1m[35mSQL (0.5ms)[0m  SET client_min_messages TO 'notice'
+  [1m[36mSQL (1.1ms)[0m  [1mSET time zone 'UTC'[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TIME ZONE
+  Processing by Rails::InfoController#properties as HTML
+  [1m[36mSQL (8.9ms)[0m  [1m SELECT COUNT(*)
+ FROM pg_tables
+ WHERE tablename = 'schema_migrations'
+ 
+[0m
+  [1m[35mSQL (2.0ms)[0m   SELECT tablename
+ FROM pg_tables
+ WHERE schemaname = ANY (current_schemas(false))
+  [1m[36mSQL (4.2ms)[0m  [1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = '"schema_migrations"'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [1m[35mSQL (1.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Rendered inline template (0.6ms)
+Completed 200 OK in 83ms (Views: 1.6ms | ActiveRecord: 20.3ms)
