@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  alumno_id: 1
+  evaluacione_id: 1
+  nota: 
+  esta_activo: false
+
+two:
+  alumno_id: 1
+  evaluacione_id: 1
+  nota: 
+  esta_activo: false

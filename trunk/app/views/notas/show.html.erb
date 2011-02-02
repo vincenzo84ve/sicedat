@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Alumno:</b>
+  <%= @nota.alumno_id %>
+</p>
+
+<p>
+  <b>Evaluacione:</b>
+  <%= @nota.evaluacione_id %>
+</p>
+
+<p>
+  <b>Nota:</b>
+  <%= @nota.nota %>
+</p>
+
+<p>
+  <b>Esta activo:</b>
+  <%= @nota.esta_activo %>
+</p>
+
+
+<%= link_to 'Edit', edit_nota_path(@nota) %> |
+<%= link_to 'Back', notas_path %>

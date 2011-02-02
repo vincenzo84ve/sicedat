@@ -1,0 +1,16 @@
+<%= simple_form_for(@evaluacione) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :nombre %>
+    <%= f.input :descripcion %>
+    <%= f.input :fecha_ini %>
+    <%= f.input :fecha_fin %>
+    <%= f.input :seccione_id %>
+    <%= f.input :esta_activo %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

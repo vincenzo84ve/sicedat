@@ -29,3 +29,7 @@ gem 'pg'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+
+# Gemas especificas del proyect
+gem "simple_form"

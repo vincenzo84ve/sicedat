@@ -1,4 +1,18 @@
 Sicedat::Application.routes.draw do
+  resources :notas
+
+  resources :evaluaciones
+
+  resources :inscripciones, :collection => { :edit_individual => :post, :update_individual => :put }
+
+  resources :alumnos
+
+  resources :secciones
+
+  resources :periodos
+
+  resources :cursos
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

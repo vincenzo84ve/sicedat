@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nombre: MyString
+  curso_id: 1
+  periodo_id: 1
+  esta_activo: false
+
+two:
+  nombre: MyString
+  curso_id: 1
+  periodo_id: 1
+  esta_activo: false

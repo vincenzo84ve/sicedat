@@ -1,0 +1,14 @@
+<h1>Editing evaluacione</h1>
+
+<%= simple_form_for @evaluacione do |f| %>
+    <%= f.input :nombre %>
+    <%= f.input :descripcion %>
+    <%= f.input :fecha_ini %>
+    <%= f.input :fecha_fin %>
+    <%= f.association :seccione %>
+    <%= f.input :esta_activo %>
+    <%= f.button :submit %>
+<% end %>
+
+<%= link_to 'Show', @evaluacione %> |
+<%= link_to 'Back', evaluaciones_path %>

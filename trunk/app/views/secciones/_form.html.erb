@@ -1,0 +1,14 @@
+<%= simple_form_for(@seccione) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :nombre %>
+    <%= f.input :curso_id %>
+    <%= f.input :periodo_id %>
+    <%= f.input :esta_activo %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

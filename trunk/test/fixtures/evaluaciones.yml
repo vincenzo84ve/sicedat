@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nombre: MyString
+  descripcion: MyText
+  fecha_ini: 2011-01-31
+  fecha_fin: 2011-01-31
+  seccione_id: 1
+  esta_activo: false
+
+two:
+  nombre: MyString
+  descripcion: MyText
+  fecha_ini: 2011-01-31
+  fecha_fin: 2011-01-31
+  seccione_id: 1
+  esta_activo: false

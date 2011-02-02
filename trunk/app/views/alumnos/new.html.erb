@@ -1,0 +1,13 @@
+<h1>New alumno</h1>
+
+<%= simple_form_for @alumno do |f| %>
+    <%= f.input :nacionalidad, :collection => ['V','E'] %>
+    <%= f.input :cedula %>
+    <%= f.input :nombre %>
+    <%= f.input :apellido %>
+    <%= f.input :correo %>
+    <%= f.input :esta_activo %>
+    <%= f.button :submit %>
+<% end %>
+
+<%= link_to 'Back', alumnos_path %>

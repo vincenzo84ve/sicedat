@@ -1,0 +1,29 @@
+<h1>Listing notas</h1>
+
+<table>
+  <tr>
+    <th>Alumno</th>
+    <th>Evaluacione</th>
+    <th>Nota</th>
+    <th>Esta activo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @notas.each do |nota| %>
+  <tr>
+    <td><%= nota.alumno_id %></td>
+    <td><%= nota.evaluacione_id %></td>
+    <td><%= nota.nota %></td>
+    <td><%= nota.esta_activo %></td>
+    <td><%= link_to 'Show', nota %></td>
+    <td><%= link_to 'Edit', edit_nota_path(nota) %></td>
+    <td><%= link_to 'Destroy', nota, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Nota', new_nota_path %>
