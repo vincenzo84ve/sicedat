@@ -1,0 +1,31 @@
+<h1>Listing secciones</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Curso</th>
+    <th>Periodo</th>
+    <th>Esta activo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @secciones.each do |seccione| %>
+  <tr>
+    <td><%= seccione.nombre %></td>
+    <td><%= seccione.curso_id %></td>
+    <td><%= seccione.periodo_id %></td>
+    <td><%= seccione.esta_activo %></td>
+    <td><%= link_to 'Show', seccione %></td>
+    <td><%= link_to 'Edit', edit_seccione_path(seccione) %></td>
+    <td><%= link_to 'Inscripciones', edit_inscripcione_path(seccione) %></td>
+    <td><%= link_to 'Destroy', seccione, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Seccione', new_seccione_path %>

@@ -1,0 +1,14 @@
+<%= simple_form_for(@nota) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :alumno_id %>
+    <%= f.input :evaluacione_id %>
+    <%= f.input :nota %>
+    <%= f.input :esta_activo %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

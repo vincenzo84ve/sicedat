@@ -1,0 +1,33 @@
+<h1>Listing evaluaciones</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th>Fecha ini</th>
+    <th>Fecha fin</th>
+    <th>Seccione</th>
+    <th>Esta activo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @evaluaciones.each do |evaluacione| %>
+  <tr>
+    <td><%= evaluacione.nombre %></td>
+    <td><%= evaluacione.descripcion %></td>
+    <td><%= evaluacione.fecha_ini %></td>
+    <td><%= evaluacione.fecha_fin %></td>
+    <td><%= evaluacione.seccione_id %></td>
+    <td><%= evaluacione.esta_activo %></td>
+    <td><%= link_to 'Show', evaluacione %></td>
+    <td><%= link_to 'Edit', edit_evaluacione_path(evaluacione) %></td>
+    <td><%= link_to 'Destroy', evaluacione, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Evaluacione', new_evaluacione_path %>

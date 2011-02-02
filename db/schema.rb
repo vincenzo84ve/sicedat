@@ -10,6 +10,71 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20110201024552) do
+
+  create_table "alumnos", :force => true do |t|
+    t.string   "nacionalidad"
+    t.integer  "cedula"
+    t.string   "nombre"
+    t.string   "apellido"
+    t.boolean  "esta_activo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "correo"
+  end
+
+  create_table "cursos", :force => true do |t|
+    t.string   "nombre"
+    t.text     "descripcion"
+    t.boolean  "esta_activo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
+
+  create_table "evaluaciones", :force => true do |t|
+    t.string   "nombre"
+    t.text     "descripcion"
+    t.date     "fecha_ini"
+    t.date     "fecha_fin"
+    t.integer  "seccione_id"
+    t.boolean  "esta_activo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "inscripciones", :force => true do |t|
+    t.integer  "alumno_id"
+    t.integer  "seccione_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "notas", :force => true do |t|
+    t.integer  "alumno_id"
+    t.integer  "evaluacione_id"
+    t.decimal  "nota"
+    t.boolean  "esta_activo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "periodos", :force => true do |t|
+    t.string   "nombre"
+    t.text     "descripcion"
+    t.boolean  "esta_abierto"
+    t.boolean  "esta_activo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "secciones", :force => true do |t|
+    t.string   "nombre"
+    t.integer  "curso_id"
+    t.integer  "periodo_id"
+    t.boolean  "esta_activo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

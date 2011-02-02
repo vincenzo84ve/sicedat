@@ -1,0 +1,12 @@
+<%= simple_form_for(@inscripcione) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :alumno_id %>
+    <%= f.input :seccione_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

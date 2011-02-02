@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @evaluacione.nombre %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @evaluacione.descripcion %>
+</p>
+
+<p>
+  <b>Fecha ini:</b>
+  <%= @evaluacione.fecha_ini %>
+</p>
+
+<p>
+  <b>Fecha fin:</b>
+  <%= @evaluacione.fecha_fin %>
+</p>
+
+<p>
+  <b>Seccione:</b>
+  <%= @evaluacione.seccione_id %>
+</p>
+
+<p>
+  <b>Esta activo:</b>
+  <%= @evaluacione.esta_activo %>
+</p>
+
+
+<%= link_to 'Edit', edit_evaluacione_path(@evaluacione) %> |
+<%= link_to 'Back', evaluaciones_path %>

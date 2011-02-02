@@ -1,0 +1,29 @@
+<h1>Listing periodos</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th>Esta abierto</th>
+    <th>Esta activo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @periodos.each do |periodo| %>
+  <tr>
+    <td><%= periodo.nombre %></td>
+    <td><%= periodo.descripcion %></td>
+    <td><%= periodo.esta_abierto %></td>
+    <td><%= periodo.esta_activo %></td>
+    <td><%= link_to 'Show', periodo %></td>
+    <td><%= link_to 'Edit', edit_periodo_path(periodo) %></td>
+    <td><%= link_to 'Destroy', periodo, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Periodo', new_periodo_path %>

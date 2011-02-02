@@ -1,0 +1,62 @@
+<h1>Editing inscripcione</h1>
+<p>
+  <b>Nombre:</b>
+  <%= @seccione.nombre %>
+</p>
+
+<p>
+  <b>Curso:</b>
+  <%= @seccione.curso.nombre %>
+</p>
+
+<p>
+  <b>Periodo:</b>
+  <%= @seccione.periodo.nombre %>
+</p>
+
+<p>
+  <b>Esta activo:</b>
+  <%= @seccione.esta_activo %>
+</p>
+
+
+<%= link_to 'Edit', edit_seccione_path(@seccione) %> |
+<%= link_to 'Back', secciones_path %>
+
+<p>
+Formulario para las inscripciones
+<h1>Listing alumnos</h1>
+
+<% form_tag edit_individual_inscripciones_path do %>
+<table>
+  <tr>
+    <th></th>
+    <th>Nacionalidad</th>
+    <th>Cedula</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Correo</th>
+    <th>Esta activo</th>
+  </tr>
+
+<% @alumnos.each do |alumno| %>
+  <tr>
+    <td><%= check_box_tag "alumno_ids[]", alumno.id %>
+    <td><%= alumno.nacionalidad %></td>
+    <td><%= alumno.cedula %></td>
+    <td><%= alumno.nombre %></td>
+    <td><%= alumno.apellido %></td>
+    <td><%= alumno.correo %></td>
+    <td><%= alumno.esta_activo %></td>
+  </tr>
+<% end %>
+</table>
+<%= submit_tag "Edit Checked" %>
+<% end %>
+<br />
+
+</p>
+
+
+<%= link_to 'Show', @inscripcione %> |
+<%= link_to 'Back', inscripciones_path %>
