@@ -1,25 +1,47 @@
-<h1>Listing inscripciones</h1>
+Formulario para las inscripciones
+<h1>Listing alumnos</h1>
 
+<%= form_tag edit_multiple_inscripciones_path do %>
 <table>
+  <thead>
   <tr>
-    <th>Alumno</th>
-    <th>Seccione</th>
+    <th></th>
+    <th>Nacionalidad</th>
+    <th>Cedula</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Correo</th>
+    <th>Esta activo</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
-
-<% @inscripciones.each do |inscripcione| %>
+  </thead>
+  <tbody>
+  <% for alumno in @alumnos %>
   <tr>
-    <td><%= inscripcione.alumno_id %></td>
-    <td><%= inscripcione.seccione_id %></td>
-    <td><%= link_to 'Show', inscripcione %></td>
-    <td><%= link_to 'Edit', edit_inscripcione_path(inscripcione) %></td>
-    <td><%= link_to 'Destroy', inscripcione, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= check_box_tag "alumnos_ids[]", alumno.id %>
+    <td><%= alumno.nacionalidad %></td>
+    <td><%= alumno.cedula %></td>
+    <td><%= alumno.nombre %></td>
+    <td><%= alumno.apellido %></td>
+    <td><%= alumno.correo %></td>
+    <td><%= alumno.esta_activo %></td>
+    <td><%= link_to 'Show', alumno %></td>
+    <td><%= link_to 'Edit', edit_alumno_path(alumno) %></td>
+    <td><%= link_to 'Destroy', alumno, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
-<% end %>
+  <% end %>
+  </tbody>
 </table>
-
+<%= submit_tag "Edit Checked" %>
+<% end %>
 <br />
+<!-- link_to nuevo alumno -->
+</p>
 
-<%= link_to 'New Inscripcione', new_inscripcione_path %>
+
+<%= link_to 'Show', @inscripcione %> |
+<%= link_to 'Back', inscripciones_path %>
+
+

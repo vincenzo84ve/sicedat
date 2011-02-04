@@ -3,7 +3,12 @@ Sicedat::Application.routes.draw do
 
   resources :evaluaciones
 
-  resources :inscripciones, :collection => { :edit_individual => :post, :update_individual => :put }
+  resources :inscripciones do
+    collection do
+      post :edit_multiple 
+      put :update_multiple
+    end
+  end
 
   resources :alumnos
 
