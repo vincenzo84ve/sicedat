@@ -1,0 +1,21 @@
+<h2>Inscribiendo a los Alumnos</h2>
+
+<% form_for :inscripcione, :url => update_multiple_inscripciones_path, :html => {:method => :put} do |form| %>
+  <ul>
+  <% for alumno in @alumnos %>
+    <li>
+      <h3><%=h alumno.nombre_apellido %></h3>
+      <%= hidden_field_tag "alumnos_ids[]", alumno.id %>
+    </li>
+  <% end %>
+  </ul>
+
+  <ol class="formList">  
+    <%= form.label :seccione_id, "Sección" %>  
+    <%= form.collection_select :seccione_id, Seccione.all, :id, :nombre, :prompt => true %>
+    <%= form.submit "Matricular" %>
+  </ol> 
+<% end %>
+<br />
+<%= link_to 'Back', inscripciones_path %>
+

@@ -41,7 +41,7 @@ Formulario para las inscripciones
 
 <% @alumnos.each do |alumno| %>
   <tr>
-    <td><%= check_box_tag "alumno_ids[]", alumno.id %>
+    <td><%= check_box_tag "alumnos_ids[]", alumno.id %>
     <td><%= alumno.nacionalidad %></td>
     <td><%= alumno.cedula %></td>
     <td><%= alumno.nombre %></td>

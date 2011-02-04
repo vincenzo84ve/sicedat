@@ -37,7 +37,8 @@ class InscripcionesController < ApplicationController
       @inscripcion.save
     end
     flash[:notice] = "Alumnos inscritos con exito!"
-    redirect_to inscripciones_path 
+    redirect_to inscripciones_path
+
   end
 
   # GET /inscripciones/new
