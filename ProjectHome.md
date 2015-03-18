@@ -1,0 +1,1 @@
+Sistema para el control de alumnos materias y notas. De apoyo para el profesor.
